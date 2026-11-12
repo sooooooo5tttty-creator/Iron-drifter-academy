@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Build your game with Iron Wood Drifter Academy in Bazpur, Uttarakhand. Basketball coaching, fitness, teamwork, and player development.">
+  <title>Iron Wood Drifter Academy | Play With Passion</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10110f;
+      --surface: #191b18;
+      --text: #f7f5ef;
+      --muted: #c4c0b7;
+      --accent: #f2762e;
+      --accent-light: #ff9a57;
+      --line: rgba(255,255,255,.12);
+      --max-width: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16,17,15,.92);
+      backdrop-filter: blur(14px);
+    }
+    .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 850; letter-spacing: .07em; line-height: 1.1; }
+    .brand-mark { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 12px; background: var(--accent); color: #17120e; font-size: 1.15rem; }
+    .brand small { display: block; margin-top: 5px; color: var(--muted); font-size: .65rem; letter-spacing: .22em; }
+    nav { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 30px); }
+    nav a { color: var(--muted); font-size: .92rem; text-decoration: none; transition: color .2s ease; }
+    nav a:hover, nav a:focus-visible { color: var(--accent-light); }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 78% 45%, rgba(242,118,46,.2), transparent 38%),
+        linear-gradient(115deg, #10110f 12%, #21180f 58%, #10110f 100%);
+    }
+    .hero::after { content: ""; position: absolute; width: 440px; height: 440px; right: 6%; top: 50%; transform: translateY(-50%) rotate(45deg); border: 1px solid rgba(242,118,46,.22); border-radius: 90px; box-shadow: 0 0 0 34px rgba(242,118,46,.035), 0 0 0 68px rgba(242,118,46,.025); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; padding-block: 100px; }
+    .eyebrow { color: var(--accent-light); font-size: .78rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { max-width: 700px; margin: 16px 0; font-size: clamp(3rem, 8vw, 6.2rem); line-height: .98; letter-spacing: -.055em; }
+    .hero h1 span { color: var(--accent); }
+    .hero-copy { max-width: 560px; margin-bottom: 28px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.2rem); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 9px; padding: 12px 20px; border: 1px solid transparent; border-radius: 7px; background: var(--accent); color: #1c130e; font-weight: 800; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--accent-light); }
+    .button.secondary { border-color: var(--line); background: transparent; color: var(--text); }
+    .button.secondary:hover { border-color: var(--accent); color: var(--accent-light); }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 36px; color: var(--muted); font-size: .92rem; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+    section { padding: 88px 0; scroll-margin-top: 76px; }
+    .section-heading { max-width: 680px; margin-bottom: 38px; }
+    .section-heading h2 { margin: 9px 0 12px; font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; letter-spacing: -.04em; }
+    .section-heading p { margin-bottom: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: stretch; }
+    .panel, .program-card, .contact-card { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .panel { padding: clamp(24px, 4vw, 42px); }
+    .panel h3 { margin-bottom: 12px; font-size: 1.45rem; }
+    .panel p { color: var(--muted); }
+    .location { display: flex; align-items: flex-start; gap: 12px; margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); }
+    .location strong { display: block; color: var(--text); }
+    .location-icon, .program-icon { color: var(--accent); font-size: 1.3rem; }
+    .callout { display: flex; flex-direction: column; justify-content: center; min-height: 260px; background: linear-gradient(145deg, #302014, #1a1916 72%); }
+    .callout strong { display: block; margin-bottom: 8px; color: var(--accent-light); font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; }
+    .callout h3 { max-width: 330px; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.12; }
+    .programs { background: #141512; }
+    .program-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .program-card { min-height: 235px; padding: 27px; transition: border-color .2s ease, transform .2s ease; }
+    .program-card:hover { transform: translateY(-4px); border-color: rgba(242,118,46,.65); }
+    .program-icon { display: grid; width: 48px; height: 48px; margin-bottom: 22px; place-items: center; border-radius: 12px; background: rgba(242,118,46,.12); }
+    .program-card h3 { margin-bottom: 9px; font-size: 1.18rem; }
+    .program-card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    .admission-card { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: clamp(26px, 5vw, 52px); border: 1px solid rgba(242,118,46,.45); border-radius: 16px; background: linear-gradient(110deg, #261a12, #191a17 72%); }
+    .admission-card h2 { margin: 8px 0 10px; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.1; }
+    .admission-card p { max-width: 570px; margin: 0; color: var(--muted); }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact-card { padding: 24px; }
+    .contact-card .label { display: block; margin-bottom: 8px; color: var(--muted); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+    .contact-card a, .contact-card strong { color: var(--text); font-size: 1.05rem; font-weight: 750; text-decoration: none; overflow-wrap: anywhere; }
+    .contact-card a:hover { color: var(--accent-light); }
+    footer { padding: 25px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    .footer-wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .footer-wrap p { margin: 0; }
+    .tagline { color: var(--accent-light); font-weight: 750; letter-spacing: .07em; }
+    :focus-visible { outline: 3px solid var(--accent-light); outline-offset: 3px; }
+    @media (max-width: 760px) {
+      .nav-wrap { min-height: auto; padding-block: 14px; align-items: flex-start; flex-direction: column; gap: 12px; }
+      nav { width: 100%; gap: 0; justify-content: space-between; overflow-x: auto; }
+      nav a { padding: 6px 5px; font-size: .82rem; }
+      .hero { min-height: 560px; }
+      .hero::after { width: 250px; height: 250px; right: -120px; top: 75%; }
+      .hero-content { padding-block: 80px; }
+      .about-grid, .program-grid, .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 66px 0; }
+      .admission-card { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Iron Wood Drifter Academy home">
+        <span class="brand-mark" aria-hidden="true">IW</span>
+        <span>IRON WOOD DRIFTER<small>BASKETBALL ACADEMY</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#training">Training</a>
+        <a href="#admission">Admissions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Bazpur, Uttarakhand · India</span>
+          <h1>Play with <span>passion.</span><br>Grow with purpose.</h1>
+          <p class="hero-copy">Build your skills, sharpen your game, and become a stronger teammate at Iron Wood Drifter Academy.</p>
+          <div class="actions">
+            <a class="button" href="#admission">Join the academy <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#training">Explore training</a>
+          </div>
+          <div class="hero-note"><span class="dot" aria-hidden="true"></span> Admissions are open — get in touch to learn more.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Our academy</span>
+          <h2>More than a game.</h2>
+          <p>We help players grow through discipline, teamwork, and consistent practice—on the court and beyond.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3>Welcome to Iron Wood Drifter Academy</h3>
+            <p>We provide basketball training and sports development opportunities for players ready to learn, improve, and challenge themselves. Our focus is on building fundamentals, confidence, and a team-first mindset.</p>
+            <div class="location"><span class="location-icon" aria-hidden="true">⌖</span><span><strong>Find us in Bazpur</strong>Uttarakhand, India</span></div>
+          </article>
+          <aside class="panel callout">
+            <strong>Play hard. Dream big.</strong>
+            <h3>Every great player starts with a first step.</h3>
+            <a class="button" href="#contact">Talk to our academy <span aria-hidden="true">→</span></a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs" id="training">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Train with purpose</span>
+          <h2>Build your game.</h2>
+          <p>Training focused on the skills and habits that help players develop.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="program-icon" aria-hidden="true">🏀</span>
+            <h3>Basketball fundamentals</h3>
+            <p>Practice dribbling, shooting, passing, defence, and the fundamentals of teamwork.</p>
+          </article>
+          <article class="program-card">
+            <span class="program-icon" aria-hidden="true">🎯</span>
+            <h3>Structured coaching</h3>
+            <p>Develop your basketball skills through focused coaching and purposeful practice.</p>
+          </article>
+          <article class="program-card">
+            <span class="program-icon" aria-hidden="true">⚡</span>
+            <h3>Fitness & development</h3>
+            <p>Work on coordination, stamina, and athletic skills through safe sports training.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="admission">
+      <div class="container">
+        <div class="admission-card">
+          <div>
+            <span class="eyebrow">Admissions open</span>
+            <h2>Your next chapter starts here.</h2>
+            <p>Take your first step toward becoming a better basketball player. Contact the academy to ask about joining and training.</p>
+          </div>
+          <a class="button" href="tel:+917417070936">Call to enquire <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Get in touch</span>
+          <h2>We’d love to hear from you.</h2>
+          <p>Reach out to ask about admissions, training, or visiting us in Bazpur.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card"><span class="label">Academy contact</span><strong>Ashish Bhatt</strong></div>
+          <div class="contact-card"><span class="label">Phone</span><a href="tel:+917417070936">+91 74170 70936</a></div>
+          <div class="contact-card"><span class="label">Instagram</span><a href="https://www.instagram.com/im_ashissh23/" target="_blank" rel="noopener noreferrer">@im_ashissh23 ↗</a></div>
+        </div>
+        <p class="location"><span class="location-icon" aria-hidden="true">⌖</span><span><strong>Location</strong>Bazpur, Uttarakhand, India</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <p>© <span id="year">2026</span> Iron Wood Drifter Academy</p>
+      <p class="tagline">PLAY HARD. DREAM BIG. ACHIEVE MORE.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
